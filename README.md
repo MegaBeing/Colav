@@ -13,7 +13,7 @@
 - Enhance productivity through shared writing and feedback
 - Encourages teamwork and creativity in document creation
 
-Join Colav today and experience the power of collaborative writing. Seamlessly create, share, and collaborate on documents with fellow users, all within a secure and user-friendly platform.
+Join Colav today and experience the power of collaborative writing. Seamlessly create, share, and collaborate on documents with fellow users, all within a secure and user-friendly platform.  
 **note**: This website doesn't consists of css right now and is in working stage
 ## Installation
 
