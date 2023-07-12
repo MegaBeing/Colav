@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <button id="sectionBtn" >Create Section</button>
+    <div id="Section-form"></div>
+    <script>
+      $(document).ready(function() {
+          $("#sectionBtn").click(function() {
+              $.get("/Section-form/", function(data) {
+                  $("#Section-form").html(data);
+              });
+          });
+      });
+  </script>
+  {% for section,pages in pageList.items %} {{ section.name }}
+  <form action="" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="Delete section" />
+    <input type="hidden" name="section_id" value="{{ section.id }}" />
+    <input type="hidden" name="flag" value="-0" />
+  </form>
+    <form action="" method="POST">
+      {% csrf_token %}
+      <input type="submit" value="+" />
+      <input type="hidden" name="section_id" value="{{ section.id }}" />
+      <input type="hidden" name="flag" value="1" />
+    </form>
+    <ul>
+      {% for page in pages %}
+      <li>
+        <a href="{% url 'write' section.id page.id %}">{{ page.title }}</a>
+       <form action="" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="page_id" value="{{ page.id }}">
+        <input type="hidden" name="flag" value="-1">
+        <input type="submit" value="-">
+       </form>
+      </li>
+      {% endfor %}
+    </ul>
+    {% endfor %}
+  </body>
+</html>
