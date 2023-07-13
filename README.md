@@ -53,7 +53,7 @@ python3 manage.py migrate
 ```
 if Step 2 doesn`t work 
 ```bash
-cd blog/
+cd Writing/
 cd migrations/
 rm 000*
 ```  
